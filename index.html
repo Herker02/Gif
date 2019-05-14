@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <link type="stylesheet" src="assets/css/style.css">
+        </head>
+        <body>
+            <button data-sports="Football">Football</button>
+            <button data-sports="Basketball">Basketball</button>
+            <button data-sports="Baseball">Baseball</button>
+            <button data-sports="Hockey">Hockey</button>
+            <button data-sports="Soccer">Soccer</button>
+
+            <div id="gifs-appear"></div>
+
+            <script src="https://code.jquery.com/jquery.js"></script>
+
+            <script type="text/javascript">
+            $("button").on("click",function(){
+                var sports = $(this).attr("data-sports");
+                console.log(this);
+
+                var queryUrl ="https://api.giphy.com/v1/gifs/search?q=" + sports + "&api_key=dc6zaTOxFJmzC&limit=10";
+
+                $.ajax({
+                    url: queryUrl,
+                    method: "GET",
+                }).then(function(response){
+                    console.log(queryUrl);
+                })
+
+            })
+            
+                
+            </script>
+
+
+
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+            <script src="assets/javascript/app.js"></script>
+        </body>
+        <div id="botWrapper">
+        <img src="assets/css/images/Giphy Attribution Marks/Animated Logos/PoweredBy_200_Horizontal_Light-Backgrounds_With_Logo.gif">
+        </div>
+
+</html>
