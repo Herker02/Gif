@@ -1,3 +1,6 @@
-body {
-    background-color: red;
+.main-content {
+    background-color: grey;
+    width: 300px;
+    height: 100px;
+    margin: 2px;
 }
